@@ -3,6 +3,13 @@ import Layout from '../router/layout/index.vue';
 import Login from './login/login.vue';
 import Home from './home/home.vue';
 
+import useLoginStore from '@/stores/login';
+console.log('ceshi-----------',useLoginStore);
+
+// //获取仓库的方法 --- 
+// const store = useLoginStore(); //!!!!调用显示pinia未创建
+// const {token} = store;
+
 // 懒加载 产品列表
 const Product = () => import('../router/product/index.vue')
 const List = () => import('../router/product/list/list.vue')
@@ -23,6 +30,9 @@ const router = createRouter({
       path: '/',
       name: 'layout',
       component: Layout,
+      meta: {
+        // isLogin:true // Layout 下的子集必须登录才能使用
+      },
       children: [
         {
           path: '/',
@@ -36,16 +46,25 @@ const router = createRouter({
           path: '/order',
           name: 'order',
           component: Order,
+          meta: {
+            title: '订单管理'
+          },
           children: [
             {
               path: 'order-list',
               name: 'order-list',
-              component: OrderList
+              component: OrderList,
+              meta: {
+                title: '订单列表'
+              },
             },
             {
               path: 'collect',
               name: 'collect',
-              component: OrderCollect
+              component: OrderCollect,
+              meta: {
+                title: '汇总订单'
+              },
             }
           ]
         },
@@ -53,16 +72,25 @@ const router = createRouter({
           path: '/product',
           name: 'product',
           component: Product,
+          meta:{
+            title:"产品管理",
+          },
           children: [
             {
               path: 'list',
               name: 'list',
               component: List,
+              meta:{
+                title:"产品列表",
+              },
             },
             {
               path: 'category',
               name: 'category',
               component: Category,
+              meta:{
+                title:"产品分类",
+              },
             },
             {
               path: 'addProduct',
@@ -77,7 +105,6 @@ const router = createRouter({
         }
       ]
     },
-
     {
       path: '/login',
       name: 'login',
@@ -85,6 +112,26 @@ const router = createRouter({
     }
   ]
 })
+
+// // 配置路由全局前置守卫
+// router.beforeEach((to,from,next) =>{
+//   // 判断进入页面的路由是否需要登录
+//   if(to.matched.some(record => record.meta.requiresAuth)){
+//     // 需要验证登录
+//     if(token){
+//       next()
+//     }
+//     else{
+//       next('/login')
+//     }
+
+//   }
+//   else {
+//     // 不需要
+//     next()
+//   }
+// })
+
 
 export default router
 

@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <Breadcrumb></Breadcrumb>
     <!--1.  顶部区域布局---------- -->
     <div class="header">
       <div class="item">

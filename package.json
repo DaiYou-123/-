@@ -19,6 +19,7 @@
     "echarts": "^5.5.0",
     "element-plus": "^2.7.3",
     "express": "^4.19.2",
+    "file-saver": "^2.0.5",
     "js-cookie": "^3.0.5",
     "jsonwebtoken": "^9.0.2",
     "mokjs": "^0.0.3",
@@ -26,11 +27,13 @@
     "mysql": "^2.18.1",
     "normalize.css": "^8.0.1",
     "pinia": "^2.1.7",
+    "pinia-plugin-persistedstate": "^3.2.1",
     "querystring": "^0.2.1",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0",
     "webpack": "^5.91.0",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@tsconfig/node20": "^20.1.4",

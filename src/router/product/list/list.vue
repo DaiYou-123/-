@@ -1,7 +1,6 @@
 <template>
   <div>
-
-
+    <Breadcrumb></Breadcrumb>
     <div class="header">
       <div class="form">
         <el-form :inline="true" :model="formInline" class="demo-form-inline">
@@ -50,9 +49,9 @@
         <el-table-column prop="id" label="商品编号" width="120">
         </el-table-column>
         <el-table-column prop="title" label="商品名称" width="120" show-overflow-tooltip>
-          <!-- <template slot-scope="scope">
-            <span style="color:blue;cursor: pointer;" >{{ scope.row.title }}</span>
-          </template> -->
+          <template #default="scope">
+            <span style="color:blue;cursor: pointer;"  @click="handleDetail(scope.$index, scope.row)">{{ scope.row.title }}</span>
+          </template>
         </el-table-column>
         <el-table-column prop="price" label="商品价格" width="120">
         </el-table-column>
@@ -169,6 +168,16 @@ const getList = async (page) => {
     pageSize = res.data.pageSize;
   }
 }
+
+// 点击商品名称---查看详情
+const handleDetail = ((index, row)=>{
+  router.push('/product/addProduct')
+//pinia 存储数据 当前行的数据 --- 
+store.setRowData({
+    title:'详情',
+    rowData:row
+  })
+})
 
 //编辑按钮--------------------------------------------
 const handleEdit = (index, row) => {

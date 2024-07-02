@@ -154,7 +154,7 @@ const submitForm = async () => {
 
 onMounted(()=>{
     // 编辑页面时
-    if(title == "编辑"){
+    if(title == "编辑" || store.title == '详情'){
         ruleForm = rowData;
         Object.assign(ruleForm, rowData)
     console.log('myform--------', ruleForm);
