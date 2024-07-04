@@ -5,8 +5,8 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router/index'
 
-import ElementPlus from 'element-plus'
-import 'element-plus/dist/index.css'
+// import ElementPlus from 'element-plus'
+// import 'element-plus/dist/index.css'
 import 'normalize.css/normalize.css'
 import './assets/css/base.css'
 // 数据持续化
@@ -31,7 +31,7 @@ app.use(router)
 // app.use(ElementPlus)
 
 import locale from "element-plus/es/locale/lang/zh-cn";//需要新加的代码
-app.use(ElementPlus, {locale});//需要改变的地方，加入locale（中文包）
+// app.use(ElementPlus, {locale});//需要改变的地方，加入locale（中文包）
 // app.config.globalProperties.$echarts = echarts
 
 
