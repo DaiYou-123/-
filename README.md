@@ -17,8 +17,8 @@
     (2)按需导入
         1. 下载依赖包
             npm install -D unplugin-vue-components unplugin-auto-import
-        2. 配置vite.config文件
-        
+        2. 配置vite.config文件 
+
 ## 安装依赖
 npm i normalize.css -S
 npm i axios -S  npm i querystring -S
