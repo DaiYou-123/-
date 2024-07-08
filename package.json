@@ -13,6 +13,7 @@
   "dependencies": {
     "@wangeditor/editor": "^5.1.23",
     "@wangeditor/editor-for-vue": "^5.1.12",
+    "@x-ui-vue3/skeleton": "^1.0.2",
     "axios": "^1.7.2",
     "cors": "^2.8.5",
     "dayjs": "^1.11.11",

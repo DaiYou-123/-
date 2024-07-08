@@ -62,7 +62,7 @@
 </template>
 
 <script setup>
-import { inject, onMounted, reactive, ref, toRefs, nextTick } from "vue";
+import { onMounted, reactive, ref } from "vue";
 import TreeProduct from './TreeProduct.vue';
 import UploadImg from './UploadImg.vue';
 import WangEditor from './WangEditor.vue';

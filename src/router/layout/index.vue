@@ -1,11 +1,26 @@
 <template>
-    <div class="Menu"><Menu></menu></div>
-    <div class="Content"><Content></Content></div>
+   
+    <div class="skeleton" v-if="isLoading"><Skeleton></Skeleton></div>
+    <div v-else>
+        <div class="Menu"><Menu></menu></div>
+        <div class="Content"> <Content></Content></div>
+    </div>
+
 </template>
 
-<script setup lang="ts">
+<script setup >
     import Menu from '../menu/menu.vue'
     import Content from '../content/content.vue'
+    import Skeleton from '../content/skeleton.vue'
+
+    import { onMounted,ref } from "vue";
+
+    const isLoading = ref(true); 
+    // 组件挂载完毕 但是数据还没有更新（没有数据库数据）
+    onMounted(()=>{
+        console.log("chenggong2------------------------------------");
+        isLoading.value = false;
+    })
 </script>
 
 <style scoped>

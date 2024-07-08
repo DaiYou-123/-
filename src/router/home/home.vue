@@ -2,7 +2,7 @@
   <div class="home">
     <Breadcrumb></Breadcrumb>
     <!--1.  顶部区域布局---------- -->
-    <div class="header">
+    <div class="header" >
       <div class="item">
         总销售额
         <div class='num'>{{ numHandle(totalData.saleTotal) }}</div>
@@ -23,7 +23,7 @@
     </div>
 
     <!--2. 访问数据统计 ----------------->
-    <div class="content">
+    <div class="content"  >
       <div class="time-info" id='box13'>
         <div class="title">月销售额</div>
         <div id="charts" style="width: 100%; height: 300px"></div>
@@ -37,7 +37,7 @@
 
     <!-- 3.  -->
     <!-- 最新内容 -->
-    <div class="home-footer">
+    <div class="home-footer" >
       <el-card class="box-card">
         <div slot="header" class="clearfix">
           <span>今日订单</span>
@@ -98,10 +98,13 @@
 <script setup>
 // 导入接口
 import { HomeTotal, getFormat, getOrder } from '@/api/home'
-import { onMounted } from 'vue';
+import { onMounted, onUpdated } from 'vue';
 import { ref } from "vue";
-// import  echarts  from '@/plugins/echarts.ts'; // 按需
-import * as echarts from 'echarts'; // 全局引用
+import  echarts  from '@/plugins/echarts.ts'; // 按需
+// import * as echarts from 'echarts'; // 全局引用
+import { defineAsyncComponent } from 'vue'
+
+const isloading = ref(true);
 const totalData = ref({})
 const orderData = ref({})
 
@@ -211,13 +214,25 @@ const drawPie = (pieData) => {
   });
 
 }
+
+// getHometotal(); // 获取数据
+
 // 进入界面--获取数据--生命周期挂载
 onMounted(() => {
   getHometotal(); // 获取数据
   getTodayOrder(); // 获取数据
   getFormatData(); // 获取数据 并 绘制图表
 
+  console.log("chenggong4------------------------------------");
+  isloading.value = true;
 })
+
+isloading.value = true;
+
+onUpdated(()=>{
+  console.log("gengxingwangbi4------------------------------------");
+})
+
 </script>
 
 <style lang="scss" scoped>

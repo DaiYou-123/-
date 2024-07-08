@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Layout from '../router/layout/index.vue';
-import Login from './login/login.vue';
+const Login = () => import( './login/login.vue') // 基本不使用
 import Home from './home/home.vue';
 
 import useLoginStore from '@/stores/login';
@@ -35,7 +35,7 @@ const router = createRouter({
       },
       children: [
         {
-          path: '/',
+          path: '',
           name: 'home',
           component: Home,
           meta: {

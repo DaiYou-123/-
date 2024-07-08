@@ -12,7 +12,6 @@
   </template>
   
   <script setup>
-  import { ref } from 'vue'
   import { Plus } from '@element-plus/icons-vue'
   import { uploadUrl,host } from "@/api/produce";
   // 向父组件 传递
