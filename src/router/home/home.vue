@@ -101,7 +101,8 @@ import { HomeTotal, getFormat, getOrder } from '@/api/home'
 import { onMounted, onUpdated } from 'vue';
 import { ref } from "vue";
 import  echarts  from '@/plugins/echarts.ts'; // 按需
-// import * as echarts from 'echarts'; // 全局引用
+// import * as echarts from 'echarts'; // 全局引用 // 后改为CDN方式的全局引用
+
 import { defineAsyncComponent } from 'vue'
 
 const isloading = ref(true);

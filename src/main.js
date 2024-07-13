@@ -17,7 +17,7 @@ import piniapluginpersistedstate from 'pinia-plugin-persistedstate'
 
 import Breadcrumb from './components/Breadcrumb/Breadcrumb.vue'
 import Skeleton from '@x-ui-vue3/skeleton'
-
+// import * as echarts from 'echarts'; // 全局引用 // 后改为CDN方式的全局引用
 // // 导入接口---挂全局---
 // import api from './api';
 const pinia = createPinia()
@@ -33,10 +33,11 @@ app.component('Breadcrumb', {Breadcrumb })
 app.use(pinia)
 
 app.use(router)
-// 全局引入
+ 
+// 全局引入 但是是CDN分发
 // app.use(ElementPlus)
 
-import locale from "element-plus/es/locale/lang/zh-cn";//需要新加的代码
+// import locale from "element-plus/es/locale/lang/zh-cn";//需要新加的代码
 // app.use(ElementPlus, {locale});//需要改变的地方，加入locale（中文包）
 // app.config.globalProperties.$echarts = echarts
 

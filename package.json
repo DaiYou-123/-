@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
+    "build": "vite build",
     "preview": "vite preview",
     "build-only": "vite build",
-    "type-check": "vue-tsc --build --force"
+    "type-check": "vue-tsc --build --force",
+    "skeleton": "webpack --progress --config src/webpack.skeleton.conf.js"
   },
   "dependencies": {
     "@wangeditor/editor": "^5.1.23",
@@ -32,8 +33,6 @@
     "querystring": "^0.2.1",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0",
-    "webpack": "^5.91.0",
-    "webpack-cli": "^5.1.4",
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
@@ -44,12 +43,17 @@
     "@vue/tsconfig": "^0.5.1",
     "nodemon": "^3.1.2",
     "npm-run-all2": "^6.1.2",
+    "rollup-plugin-visualizer": "^5.12.0",
     "sass": "^1.77.4",
     "sass-loader": "^14.2.1",
     "typescript": "~5.4.0",
     "unplugin-auto-import": "^0.17.6",
     "unplugin-vue-components": "^0.27.2",
     "vite": "^5.2.8",
-    "vue-tsc": "^2.0.11"
+    "vite-plugin-compression": "^0.5.1",
+    "vue-tsc": "^2.0.11",
+    "webpack": "^5.92.1",
+    "webpack-bundle-analyzer": "^4.10.2",
+    "webpack-cli": "^5.1.4"
   }
 }
