@@ -48,7 +48,7 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
-      treeshake: true, // 开启 Tree Shaking，消除未使用的代码，减小最终的包大小
+      treeshake: true, // (默认开启)开启 Tree Shaking，消除未使用的代码，减小最终的包大小
       output: { // 资源分包
         chunkFileNames: 'js/[name]-[hash].js', // 引入文件名的名称 name输出名字 hash内容的哈希值
         entryFileNames: 'js/[name]-[hash].js', // 包的入口文件名称 
